@@ -42,7 +42,7 @@ const MyComponentFunc = ({ name, children }) => {
             <br />
             <p>상태변수 message = {message}</p>
             <input name="message" value={message} onChange={handleChange} 
-                onKeyDown={}
+                onKeyDown={handleEnter}
             />
             <p>상태변수 username = {username}</p>
             <input name="username" value={username} onChange={handleChange} 
