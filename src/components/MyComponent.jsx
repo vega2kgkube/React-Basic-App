@@ -7,7 +7,11 @@ class MyComponent extends Component {
         value: 0,
     };
     //event handler 함수선언
-
+    handleDecrement = () => {
+      this.setState({
+        value: this.state.value - 1
+      })
+    };
     render() {
         //destructuring assignment 
         const { name, age } = this.props;
