@@ -17,6 +17,7 @@ class MyComponent extends Component {
         value: this.state.value - 1
       })
     }; //handleDecrement
+    
     handleChange = (e) => {
         this.setState({
             /*
@@ -27,11 +28,15 @@ class MyComponent extends Component {
         })
     }; //handleChange
 
+    handleEnter = (e) => {
+
+    } //handleEnter
+
     render() {
         //destructuring assignment 
         const { name, age } = this.props;
         const { value, message, username, isValid } = this.state;
-        const { handleDecrement, handleChange } = this;
+        const { handleDecrement, handleChange, handleEnter } = this;
 
         return (
             <div>
@@ -44,11 +49,12 @@ class MyComponent extends Component {
                 <button onClick={handleDecrement}>감소</button>
                 <br/>
                 <p>상태변수 message = {message}</p>
-                <input name="message" value={message} onChange={handleChange} />
-                
+                <input name="message" value={message} onChange={handleChange} onKeyDown={handleEnter} />
+
                 <p>상태변수 username = {username}</p>
                 <input name="username" value={username} onChange={handleChange} 
                     className={isValid ? 'success':'failure'}
+                    ref={(ref) => this.myUsername=ref}
                 />
 
             </div>
