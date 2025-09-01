@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const MyComponentFunc = ({ name, children }) => {
     //useState() 함수사용
-    const [value,setValue] = useState(0);
+    const [value, setValue] = useState(0);
 
     return (
         <div>
