@@ -6,6 +6,8 @@ class MyComponent extends Component {
     state = {
         value: 0,
     };
+    //event handler 함수선언
+
     render() {
         //destructuring assignment 
         const { name, age } = this.props;
@@ -16,6 +18,10 @@ class MyComponent extends Component {
                 <h2>클래스 타입 컴포넌트</h2>
                 <h3>Hello! {name} - {age}</h3>
                 <p>상태변수 value = {value}</p>
+                <button onClick={() => (
+                    this.setState({ value: value + 1 })
+                )}>증가</button>
+                <button>감소</button>
             </div>
         );
     }
